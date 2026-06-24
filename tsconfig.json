@@ -13,7 +13,11 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve",
-    "rootDir": "."
+    "rootDir": ".",
+    "paths": {
+      "@form-inputs": ["./src/app/shared/form-inputs/index.ts"],
+      "@core/*": ["./src/app/core/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

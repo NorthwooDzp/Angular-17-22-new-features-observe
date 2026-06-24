@@ -1,0 +1,38 @@
+@use '@angular/material' as mat;
+
+/*Form-field common*/
+.form-field {
+  --mat-sys-body-large-line-height: 18px;
+  --form-field-infix-padding: 10px;
+  --form-field-height: calc(
+    var(--mat-sys-body-large-line-height) + 2 * var(--form-field-infix-padding)
+  );
+  --mat-form-field-container-text-size: 14px;
+  --mat-form-field-outlined-label-text-size: var(--mat-form-field-container-text-size);
+
+  @include mat.form-field-overrides(
+    (
+      container-height: var(--form-field-height),
+    )
+  );
+
+  .mat-mdc-form-field {
+    --mat-form-field-outlined-container-shape: 4px;
+    --mat-form-field-container-vertical-padding: var(--form-field-infix-padding);
+
+    display: block;
+
+    .mdc-text-field--outlined {
+      height: var(--form-field-height);
+      padding-left: var(--form-field-infix-padding);
+      padding-right: var(--form-field-infix-padding);
+      .mdc-notched-outline .mdc-notched-outline__leading {
+        width: var(--form-field-infix-padding);
+      }
+    }
+
+    .mat-mdc-floating-label:not(.mdc-floating-label--float-above) {
+      transform: translate(-4px, -50%);
+    }
+  }
+}
